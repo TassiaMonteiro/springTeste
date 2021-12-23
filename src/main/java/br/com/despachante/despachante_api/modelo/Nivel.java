@@ -5,10 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.security.core.GrantedAuthority;
-
 @Entity
-public class Nivel implements GrantedAuthority{
+public class Nivel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,11 +27,6 @@ public class Nivel implements GrantedAuthority{
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	@Override
-	public String getAuthority() {
-		return nome;
 	}
 
 }

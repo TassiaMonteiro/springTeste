@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.despachante.despachante_api.controller.dto.UsuarioDto;
 import br.com.despachante.despachante_api.controller.dto.VeiculoDto;
 import br.com.despachante.despachante_api.controller.form.VeiculoForm;
 import br.com.despachante.despachante_api.modelo.Veiculo;
@@ -58,7 +56,7 @@ public class VeiculoController {
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity<VeiculoDto> cadastrarVeiculo(@RequestBody @Valid VeiculoForm veiculoForm, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<VeiculoDto> cadastrarVeiculo(@RequestBody VeiculoForm veiculoForm, UriComponentsBuilder uriBuilder) {
 		Veiculo veiculo = veiculoForm.converter(clienteRepository);
 		veiculoRepository.save(veiculo);
 		URI uri = uriBuilder.path("/veiculo/{id}").buildAndExpand(veiculo.getVeiculoId()).toUri();

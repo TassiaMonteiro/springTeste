@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +48,7 @@ public class UsuarioController {
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity<UsuarioDto> cadastrarUsuario(@RequestBody @Valid UsuarioForm usuarioForm, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<UsuarioDto> cadastrarUsuario(@RequestBody UsuarioForm usuarioForm, UriComponentsBuilder uriBuilder) {
 		Usuario usuario = usuarioForm.converter(nivelRepository);
 		usuarioRepository.save(usuario);
 		URI uri = uriBuilder.path("/usuario/{id}").buildAndExpand(usuario.getUsuarioId()).toUri();

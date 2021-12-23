@@ -1,8 +1,5 @@
 package br.com.despachante.despachante_api.controller.form;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 import br.com.despachante.despachante_api.modelo.Cliente;
 import br.com.despachante.despachante_api.modelo.Veiculo;
 import br.com.despachante.despachante_api.repository.ClienteRepository;
@@ -10,23 +7,14 @@ import br.com.despachante.despachante_api.repository.VeiculoRepository;
 
 public class VeiculoForm {
 
-	@NotNull @NotEmpty
 	private String placa;
-	@NotNull @NotEmpty
 	private String marca;
-	@NotNull
 	private Integer ano;
-	@NotNull @NotEmpty
 	private String chassi;
-	@NotNull @NotEmpty
 	private String tipo;
-	@NotNull @NotEmpty
 	private String modelo;
-	@NotNull @NotEmpty
 	private String cor;
-	@NotNull @NotEmpty
 	private String cidade;
-	@NotNull @NotEmpty
 	private String renavam;
 	private String observacoes;
 	private Long clienteId;

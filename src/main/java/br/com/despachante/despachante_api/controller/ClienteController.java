@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +42,7 @@ public class ClienteController {
 
 	@PostMapping
 	@Transactional
-	public ResponseEntity<Cliente> cadastrarCliente(@RequestBody @Valid ClienteForm clienteForm, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<Cliente> cadastrarCliente(@RequestBody ClienteForm clienteForm, UriComponentsBuilder uriBuilder) {
 		Cliente cliente = clienteForm.converter();
 		clienteRepository.save(cliente);
 		URI uri = uriBuilder.path("/cliente/{id}").buildAndExpand(cliente.getClienteId()).toUri();

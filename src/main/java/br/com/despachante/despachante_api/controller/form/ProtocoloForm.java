@@ -3,9 +3,6 @@ package br.com.despachante.despachante_api.controller.form;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
@@ -20,9 +17,7 @@ import br.com.despachante.despachante_api.repository.VeiculoRepository;
 
 public class ProtocoloForm {
 
-	@NotNull @NotEmpty
 	private String servicos;
-	@NotNull
 	private BigDecimal valorRecebido;
 	@DateTimeFormat(pattern = "dd/MM/yyyy", iso = ISO.DATE_TIME)
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
@@ -33,14 +28,10 @@ public class ProtocoloForm {
 	@DateTimeFormat(pattern = "dd/MM/yyyy", iso = ISO.DATE_TIME)
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
 	private LocalDate dataEntrega;
-	@NotNull @NotEmpty
 	private String nomeVendedor;
-	@NotNull @NotEmpty
 	private String documentoVendedor;
 	private String observacoes;
-	@NotNull
 	private Long veiculoId;
-	@NotNull
 	private Long usuarioId;
 	
 	private Boolean isConcluido;

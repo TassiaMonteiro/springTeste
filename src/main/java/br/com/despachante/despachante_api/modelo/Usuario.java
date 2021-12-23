@@ -1,9 +1,6 @@
 package br.com.despachante.despachante_api.modelo;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,11 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 @Entity
-public class Usuario implements UserDetails {
+public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -93,44 +87,6 @@ public class Usuario implements UserDetails {
 
 	public void setNivel(Nivel nivel) {
 		this.nivel = nivel;
-	}
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		List<Nivel> niveis = new ArrayList<>();
-		niveis.add(nivel);
-		
-		return (Collection<? extends GrantedAuthority>) niveis;
-	}
-
-	@Override
-	public String getPassword() {
-		return this.senha;
-	}
-
-	@Override
-	public String getUsername() {
-		return this.login;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		return true;
 	}
 
 }

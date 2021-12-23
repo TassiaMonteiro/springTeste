@@ -1,24 +1,15 @@
 package br.com.despachante.despachante_api.controller.form;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 import br.com.despachante.despachante_api.modelo.Cliente;
 import br.com.despachante.despachante_api.repository.ClienteRepository;
 
 public class ClienteForm {
 
-	@NotNull @NotEmpty
 	private String nome;
-	@NotNull @NotEmpty
 	private String documento;
-	@NotNull @NotEmpty
 	private String rg;
-	@NotNull @NotEmpty
 	private String endereco;
-	@NotNull @NotEmpty
 	private String bairro;
-	@NotNull @NotEmpty
 	private String cidade;
 	private String celular;
 	private String telefone;
