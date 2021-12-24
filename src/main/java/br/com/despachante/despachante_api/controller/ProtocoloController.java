@@ -26,7 +26,7 @@ import br.com.despachante.despachante_api.repository.UsuarioRepository;
 import br.com.despachante.despachante_api.repository.VeiculoRepository;
 
 @RestController
-@RequestMapping("/protocolo")
+@RequestMapping("/api/protocolo")
 public class ProtocoloController {
 
 	@Autowired

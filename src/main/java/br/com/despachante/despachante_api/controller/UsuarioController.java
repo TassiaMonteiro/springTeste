@@ -25,7 +25,7 @@ import br.com.despachante.despachante_api.repository.NivelRepository;
 import br.com.despachante.despachante_api.repository.UsuarioRepository;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/api/usuario")
 public class UsuarioController {
 	
 	@Autowired

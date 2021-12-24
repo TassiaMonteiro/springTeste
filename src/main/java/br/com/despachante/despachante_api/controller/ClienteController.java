@@ -23,7 +23,7 @@ import br.com.despachante.despachante_api.modelo.Cliente;
 import br.com.despachante.despachante_api.repository.ClienteRepository;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/api/cliente")
 public class ClienteController {
 
 	@Autowired

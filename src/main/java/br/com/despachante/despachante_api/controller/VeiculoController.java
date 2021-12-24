@@ -25,7 +25,7 @@ import br.com.despachante.despachante_api.repository.ClienteRepository;
 import br.com.despachante.despachante_api.repository.VeiculoRepository;
 
 @RestController
-@RequestMapping("/veiculo")
+@RequestMapping("/api/veiculo")
 public class VeiculoController {
 	
 	@Autowired
